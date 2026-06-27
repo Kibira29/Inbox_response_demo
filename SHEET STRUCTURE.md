@@ -57,3 +57,26 @@ All headers must start with `ai_`:
 Position doesn't matter. The script finds columns by header name, not position. Reorder freely.
 
 ### Example layout
+Name | Email | Company | Role | draft_mode | ai_response_date | ai_classification | ai_sentiment | ai_summary | ai_action_required | ai_status | ai_last_updated | ai_draft_status
+
+Manual columns first, control column, then AI columns — but any order works.
+
+## Tab 3: `ai_digest`
+
+Created automatically by `generateWeeklyDigest`. Don't edit it manually — the tab is cleared and rewritten each time the digest runs.
+
+Contents:
+- Summary stats (counts of new replies, action items, overdue commitments, no-response)
+- New replies this week (last 7 days)
+- Action required from you
+- Your overdue commitments (extracted from your sent messages)
+- No response yet
+
+## Naming convention rationale
+
+The `ai_` prefix is a visual contract:
+- **No prefix** → manual input, you write, script reads as context
+- **`ai_` prefix** → script writes, you read or edit afterward
+- **`draft_mode`** is the deliberate exception: a manual control input the script reads
+
+If you add new columns later, follow this convention to keep the sheet readable.
