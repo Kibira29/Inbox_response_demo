@@ -45,7 +45,7 @@ Go to [aistudio.google.com](https://aistudio.google.com) → **Get API key** →
 
 ### 3. Install the script
 
-In your sheet: **Extensions → Apps Script** → delete the boilerplate → paste `Code.gs` → save.
+In your sheet: **Extensions → Apps Script** → delete the boilerplate → paste the contents of `Inbox_Response_Demo.gs` → save.
 
 ### 4. Add the API key
 
@@ -92,7 +92,7 @@ Three functions, that's it:
 | `sales_lead` | Cold outreach response classification |
 | `expense_receipts` | Document collection (receipts, signatures, attachments) |
 
-Add new campaign types by adding a block to `PROMPT_TEMPLATES` at the top of `Code.gs`.
+Add new campaign types by adding a block to `PROMPT_TEMPLATES` at the top of `Inbox_Response_Demo.gs`.
 
 ## Design notes
 
@@ -101,7 +101,7 @@ Add new campaign types by adding a block to `PROMPT_TEMPLATES` at the top of `Co
 - **Column convention.** Columns starting with `ai_` are written by the script. Everything else is yours — the script ignores manual columns when classifying but passes them to the AI as context.
 - **Failure-tolerant.** Rate limits, timeouts, API errors all caught and logged with specific reasons in the sheet, not silent failures.
 - **Resume support.** If the script hits the Apps Script 6-minute timeout, re-running picks up where it left off.
-- **All config in the sheet.** No need to edit `Code.gs` to switch campaigns — change the Config tab, run again.
+- **All config in the sheet.** No need to edit `Inbox_Response_Demo.gs` to switch campaigns — change the Config tab, run again.
 
 ## Limits
 
@@ -112,7 +112,7 @@ Add new campaign types by adding a block to `PROMPT_TEMPLATES` at the top of `Co
 
 ## What's in this repo
 
-- `Code.gs` — the Apps Script
+- `Inbox_Response_Demo.gs` — the Apps Script
 - `README.md` — this file
 - `SHEET_STRUCTURE.md` — column conventions and Config tab format
 - `ADAPTERS.md` — notes on porting to Claude or OpenAI
